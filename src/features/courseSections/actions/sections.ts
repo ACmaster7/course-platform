@@ -6,7 +6,8 @@ import {
   deleteSection as deleteSectionDb,
   getNextCourseSectionOrder,
   insertSection,
-  updateSection as updateSectionDb
+  updateSection as updateSectionDb,
+  updateSectionOrders as updateSectionOrdersDb
 } from '../db/sections';
 import { canCreateCourseSections, canDeleteCourseSections, canUpdateCourseSections } from '../permissions/sections';
 import { sectionSchema } from '../schemas/sections';
@@ -45,4 +46,14 @@ export async function deleteSection(id: string) {
   await deleteSectionDb(id);
 
   return { error: false, message: 'Successfully deleted your section' };
+}
+
+export async function updateSectionOrders(sectionIds: string[]) {
+  if (sectionIds.length === 0 || !canUpdateCourseSections(await getCurrentUser())) {
+    return { error: true, message: 'Error reordering your sections' };
+  }
+
+  await updateSectionOrdersDb(sectionIds);
+
+  return { error: false, message: 'Successfully reordered your secions' };
 }

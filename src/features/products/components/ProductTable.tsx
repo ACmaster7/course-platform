@@ -63,7 +63,7 @@ function ProductTable({ products }: CourseTableProps) {
             <TableCell>
               <div className="flex gap-2">
                 <Button asChild>
-                  <Link href={`/admin/courses/${product.id}/edit`}>Edit</Link>
+                  <Link href={`/admin/products/${product.id}/edit`}>Edit</Link>
                 </Button>
                 <ActionButton
                   variant="destructiveOutline"

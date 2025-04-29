@@ -7,8 +7,6 @@ export async function POST(req: NextRequest) {
   try {
     const evt = await verifyWebhook(req);
 
-    console.log('✅✅✅✅ Received Clerk event:', evt.type);
-
     return TTT(evt);
   } catch (err) {
     console.error('Error verifying webhook:', err);

@@ -26,7 +26,7 @@ function Navbar() {
             className=" text-lg hover:underline"
             href="/"
           >
-            Web Dev Simplified
+            Course Platform
           </Link>
           <Badge>Admin</Badge>
         </div>

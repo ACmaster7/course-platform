@@ -7,6 +7,7 @@ export const env = createEnv({
     DB_USER: z.string().nonempty(),
     DB_NAME: z.string().nonempty(),
     DB_HOST: z.string().nonempty(),
+    DB_PORT: z.string().nonempty(),
     CLERK_SECRET_KEY: z.string().nonempty(),
     CLERK_WEBHOOK_SIGNING_SECRET: z.string().nonempty(),
     ARCJET_KEY: z.string().nonempty(),

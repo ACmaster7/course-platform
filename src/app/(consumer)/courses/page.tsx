@@ -92,10 +92,12 @@ function SkeletonCourseCard() {
         <CardTitle>
           <SkeletonText className="w-3/4" />
         </CardTitle>
-        <SkeletonText className="w-1/2" />
+        <CardDescription>
+          <SkeletonText className="w-1/2" />
+        </CardDescription>
       </CardHeader>
       <CardContent>
-        <SkeletonText rows={3} className="w-1/2" />
+        <SkeletonText rows={3} />
       </CardContent>
       <CardFooter>
         <SkeletonButton />

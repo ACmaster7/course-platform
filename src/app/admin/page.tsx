@@ -26,8 +26,8 @@ async function AdminPage() {
   return (
     <div className="container my-6">
       <div className=" grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        <StatCard title="Net Sales">{formatPrice(netSales)}</StatCard>
-        <StatCard title="Refunded Sales">{formatPrice(totalRefunds)}</StatCard>
+        <StatCard title="Net Sales">{formatPrice(netSales, { showZeroAsNumber: true })}</StatCard>
+        <StatCard title="Refunded Sales">{formatPrice(totalRefunds, { showZeroAsNumber: true })}</StatCard>
         <StatCard title="Un-Refunded Purchases">{formatNumber(netPurchases)}</StatCard>
         <StatCard title="Refunded Purchases">{formatNumber(refundedPurchases)}</StatCard>
         <StatCard title="Purchases Per User">
